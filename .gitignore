@@ -18,7 +18,6 @@ $RECYCLE.BIN/
 # Arquivos sensíveis e credenciais
 .env
 .env.*
-.env.example
 .env.production
 .env.backup
 .env.local
@@ -71,7 +70,7 @@ Homestead.yaml
 /storage/app/*
 !/storage/app/.gitkeep
 !/storage/app/public/
- /storage/framework/cache/*
+/storage/framework/cache/*
 !/storage/framework/cache/.gitkeep
 /storage/framework/sessions/*
 !/storage/framework/sessions/.gitkeep
@@ -79,6 +78,18 @@ Homestead.yaml
 !/storage/framework/views/.gitkeep
 /storage/logs/*
 !/storage/logs/.gitkeep
+
+# Arquivos de configuração compilada (contêm dados sensíveis)
+/bootstrap/cache/config.php
+/bootstrap/cache/packages.php
+/bootstrap/cache/services.php
+/bootstrap/cache/routes-*.php
+
+# Arquivos de sessão e cache temporários
+/storage/framework/sessions/*
+!/storage/framework/sessions/.gitkeep
+/storage/framework/cache/data/*
+!/storage/framework/cache/data/.gitkeep
 
 # Node/NPM/Yarn
 /node_modules
