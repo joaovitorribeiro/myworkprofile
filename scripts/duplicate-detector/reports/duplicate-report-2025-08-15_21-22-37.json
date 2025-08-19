@@ -1,0 +1,247 @@
+{
+    "metadata": {
+        "timestamp": "2025-08-15 21:22:37",
+        "version": "2.0",
+        "generator": "Vibefy Duplicate Detector",
+        "projectType": "unknown"
+    },
+    "summary": {
+        "processedFiles": 4,
+        "duplicateGroups": 4,
+        "totalDuplicates": 12,
+        "duplicatedLines": 24,
+        "totalLines": 19,
+        "potentialSavings": 126.32
+    },
+    "statistics": {
+        "byFileType": {
+            "php": {
+                "files": 4,
+                "duplicates": 12
+            }
+        },
+        "byDirectory": {
+            "L:\\vibefy\\scripts\\duplicate-detector\/final-test-files": 12
+        },
+        "sizeDistribution": {
+            "small": 12,
+            "medium": 0,
+            "large": 0
+        }
+    },
+    "duplicates": [
+        {
+            "hash": "eb3e78a7c9e1d7b345f5a987a4900d72",
+            "count": 3,
+            "blocks": [
+                {
+                    "file": "L:\\vibefy\\scripts\\duplicate-detector\/final-test-files\\file1.php",
+                    "startLine": 1,
+                    "endLine": 2,
+                    "code": [
+                        "<?php",
+                        "function duplicateFunction() {"
+                    ],
+                    "normalized": [
+                        "<?php",
+                        "function duplicateFunction() {"
+                    ]
+                },
+                {
+                    "file": "L:\\vibefy\\scripts\\duplicate-detector\/final-test-files\\file2.php",
+                    "startLine": 1,
+                    "endLine": 2,
+                    "code": [
+                        "<?php",
+                        "function duplicateFunction() {"
+                    ],
+                    "normalized": [
+                        "<?php",
+                        "function duplicateFunction() {"
+                    ]
+                },
+                {
+                    "file": "L:\\vibefy\\scripts\\duplicate-detector\/final-test-files\\file3.php",
+                    "startLine": 1,
+                    "endLine": 2,
+                    "code": [
+                        "<?php",
+                        "function duplicateFunction() {"
+                    ],
+                    "normalized": [
+                        "<?php",
+                        "function duplicateFunction() {"
+                    ]
+                }
+            ],
+            "similarity": 1
+        },
+        {
+            "hash": "5d16a1e6ee559b6fc395a5c62004483a",
+            "count": 3,
+            "blocks": [
+                {
+                    "file": "L:\\vibefy\\scripts\\duplicate-detector\/final-test-files\\file1.php",
+                    "startLine": 2,
+                    "endLine": 3,
+                    "code": [
+                        "function duplicateFunction() {",
+                        "    echo \"This is a duplicate function\";"
+                    ],
+                    "normalized": [
+                        "function duplicateFunction() {",
+                        "echo \"This is a duplicate function\";"
+                    ]
+                },
+                {
+                    "file": "L:\\vibefy\\scripts\\duplicate-detector\/final-test-files\\file2.php",
+                    "startLine": 2,
+                    "endLine": 3,
+                    "code": [
+                        "function duplicateFunction() {",
+                        "    echo \"This is a duplicate function\";"
+                    ],
+                    "normalized": [
+                        "function duplicateFunction() {",
+                        "echo \"This is a duplicate function\";"
+                    ]
+                },
+                {
+                    "file": "L:\\vibefy\\scripts\\duplicate-detector\/final-test-files\\file3.php",
+                    "startLine": 2,
+                    "endLine": 3,
+                    "code": [
+                        "function duplicateFunction() {",
+                        "    echo \"This is a duplicate function\";"
+                    ],
+                    "normalized": [
+                        "function duplicateFunction() {",
+                        "echo \"This is a duplicate function\";"
+                    ]
+                }
+            ],
+            "similarity": 1
+        },
+        {
+            "hash": "81607c560baade3f7d30ec58a9081769",
+            "count": 3,
+            "blocks": [
+                {
+                    "file": "L:\\vibefy\\scripts\\duplicate-detector\/final-test-files\\file1.php",
+                    "startLine": 3,
+                    "endLine": 4,
+                    "code": [
+                        "    echo \"This is a duplicate function\";",
+                        "    $result = \"hello world\";"
+                    ],
+                    "normalized": [
+                        "echo \"This is a duplicate function\";",
+                        "$result = \"hello world\";"
+                    ]
+                },
+                {
+                    "file": "L:\\vibefy\\scripts\\duplicate-detector\/final-test-files\\file2.php",
+                    "startLine": 3,
+                    "endLine": 4,
+                    "code": [
+                        "    echo \"This is a duplicate function\";",
+                        "    $result = \"hello world\";"
+                    ],
+                    "normalized": [
+                        "echo \"This is a duplicate function\";",
+                        "$result = \"hello world\";"
+                    ]
+                },
+                {
+                    "file": "L:\\vibefy\\scripts\\duplicate-detector\/final-test-files\\file3.php",
+                    "startLine": 3,
+                    "endLine": 4,
+                    "code": [
+                        "    echo \"This is a duplicate function\";",
+                        "    $result = \"hello world\";"
+                    ],
+                    "normalized": [
+                        "echo \"This is a duplicate function\";",
+                        "$result = \"hello world\";"
+                    ]
+                }
+            ],
+            "similarity": 1
+        },
+        {
+            "hash": "453a557fcf23053de070eaf5eea2115e",
+            "count": 3,
+            "blocks": [
+                {
+                    "file": "L:\\vibefy\\scripts\\duplicate-detector\/final-test-files\\file1.php",
+                    "startLine": 4,
+                    "endLine": 5,
+                    "code": [
+                        "    $result = \"hello world\";",
+                        "    return $result;"
+                    ],
+                    "normalized": [
+                        "$result = \"hello world\";",
+                        "return $result;"
+                    ]
+                },
+                {
+                    "file": "L:\\vibefy\\scripts\\duplicate-detector\/final-test-files\\file2.php",
+                    "startLine": 4,
+                    "endLine": 5,
+                    "code": [
+                        "    $result = \"hello world\";",
+                        "    return $result;"
+                    ],
+                    "normalized": [
+                        "$result = \"hello world\";",
+                        "return $result;"
+                    ]
+                },
+                {
+                    "file": "L:\\vibefy\\scripts\\duplicate-detector\/final-test-files\\file3.php",
+                    "startLine": 4,
+                    "endLine": 5,
+                    "code": [
+                        "    $result = \"hello world\";",
+                        "    return $result;"
+                    ],
+                    "normalized": [
+                        "$result = \"hello world\";",
+                        "return $result;"
+                    ]
+                }
+            ],
+            "similarity": 1
+        }
+    ],
+    "processedFiles": [
+        "L:\\vibefy\\scripts\\duplicate-detector\/final-test-files\\file1.php",
+        "L:\\vibefy\\scripts\\duplicate-detector\/final-test-files\\file2.php",
+        "L:\\vibefy\\scripts\\duplicate-detector\/final-test-files\\file3.php",
+        "L:\\vibefy\\scripts\\duplicate-detector\/final-test-files\\unique.php"
+    ],
+    "recommendations": [
+        {
+            "title": "Grande economia potencial",
+            "description": "Mais de 20% do c\u00f3digo \u00e9 duplicado. Priorize a remo\u00e7\u00e3o de duplicatas para melhorar a manutenibilidade.",
+            "priority": "high"
+        },
+        {
+            "title": "Implementar hooks de Git",
+            "description": "Configure hooks pre-commit e pre-merge para prevenir futuras duplicatas.",
+            "priority": "medium"
+        },
+        {
+            "title": "Revis\u00e3o de c\u00f3digo",
+            "description": "Estabele\u00e7a processos de revis\u00e3o de c\u00f3digo para identificar duplicatas antes do merge.",
+            "priority": "medium"
+        },
+        {
+            "title": "Remo\u00e7\u00e3o autom\u00e1tica",
+            "description": "Use o comando --remove-smart para remover duplicatas automaticamente com backup.",
+            "priority": "low"
+        }
+    ],
+    "performance": []
+}

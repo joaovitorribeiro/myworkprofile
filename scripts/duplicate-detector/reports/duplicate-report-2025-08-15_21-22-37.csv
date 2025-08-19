@@ -1,0 +1,13 @@
+Grupo,Arquivo,"Linha Inicial","Linha Final",Linhas,Similaridade,Hash,Tipo
+1,"L:\vibefy\scripts\duplicate-detector/final-test-files\file1.php",1,2,2,1,eb3e78a7c9e1d7b345f5a987a4900d72,exact
+1,"L:\vibefy\scripts\duplicate-detector/final-test-files\file2.php",1,2,2,1,eb3e78a7c9e1d7b345f5a987a4900d72,exact
+1,"L:\vibefy\scripts\duplicate-detector/final-test-files\file3.php",1,2,2,1,eb3e78a7c9e1d7b345f5a987a4900d72,exact
+2,"L:\vibefy\scripts\duplicate-detector/final-test-files\file1.php",2,3,2,1,5d16a1e6ee559b6fc395a5c62004483a,exact
+2,"L:\vibefy\scripts\duplicate-detector/final-test-files\file2.php",2,3,2,1,5d16a1e6ee559b6fc395a5c62004483a,exact
+2,"L:\vibefy\scripts\duplicate-detector/final-test-files\file3.php",2,3,2,1,5d16a1e6ee559b6fc395a5c62004483a,exact
+3,"L:\vibefy\scripts\duplicate-detector/final-test-files\file1.php",3,4,2,1,81607c560baade3f7d30ec58a9081769,exact
+3,"L:\vibefy\scripts\duplicate-detector/final-test-files\file2.php",3,4,2,1,81607c560baade3f7d30ec58a9081769,exact
+3,"L:\vibefy\scripts\duplicate-detector/final-test-files\file3.php",3,4,2,1,81607c560baade3f7d30ec58a9081769,exact
+4,"L:\vibefy\scripts\duplicate-detector/final-test-files\file1.php",4,5,2,1,453a557fcf23053de070eaf5eea2115e,exact
+4,"L:\vibefy\scripts\duplicate-detector/final-test-files\file2.php",4,5,2,1,453a557fcf23053de070eaf5eea2115e,exact
+4,"L:\vibefy\scripts\duplicate-detector/final-test-files\file3.php",4,5,2,1,453a557fcf23053de070eaf5eea2115e,exact

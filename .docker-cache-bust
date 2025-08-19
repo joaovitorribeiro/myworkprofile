@@ -1,0 +1,4 @@
+﻿# Este arquivo forca o rebuild do Docker invalidando o cache
+# Timestamp: 2025-08-15 16:57:28
+# Motivo: Deploy forcado sem cache
+CACHE_BUST=20250815165728

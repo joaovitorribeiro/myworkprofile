@@ -1,0 +1,223 @@
+{
+  "projectType": "laravel",
+  "description": "Configuração avançada para detecção de duplicatas - Laravel Project",
+  "version": "2.0",
+  
+  "analysis": {
+    "minLines": 3,
+    "minTokens": 50,
+    "similarity": 0.85,
+    "contextLines": 2,
+    "ignoreWhitespace": true,
+    "ignoreComments": true,
+    "caseSensitive": false,
+    "fileExtensions": [
+      "php", "js", "jsx", "ts", "tsx", "vue", "css", "scss", "sass", "less",
+      "html", "blade.php", "twig", "py", "java", "c", "cpp", "cs", "go", "rb"
+    ]
+  },
+  
+  "ignore": {
+    "patterns": [
+      "*.min.js",
+      "*.min.css",
+      "*.bundle.*",
+      "**/node_modules/**",
+      "**/vendor/**",
+      "**/storage/**",
+      "**/bootstrap/cache/**"
+    ],
+    "paths": [
+      "node_modules",
+      "vendor",
+      "storage/framework",
+      "storage/logs",
+      "bootstrap/cache",
+      "public/storage",
+      ".git",
+      ".vscode",
+      ".idea"
+    ],
+    "files": [
+      "composer.lock",
+      "package-lock.json",
+      "yarn.lock",
+      "webpack.mix.js",
+      "vite.config.js",
+      "tailwind.config.js"
+    ],
+    "filePatterns": {
+      "migrations": {
+        "enabled": true,
+        "reason": "Migrações são frequentemente auto-geradas e podem ter estruturas similares"
+      },
+      "tests": {
+        "enabled": false,
+        "reason": "Testes podem ter padrões similares mas são importantes para manter"
+      },
+      "config": {
+        "enabled": true,
+        "reason": "Arquivos de configuração podem ter estruturas similares"
+      }
+    }
+  },
+  
+  "detection": {
+    "algorithms": {
+      "hash": {
+        "enabled": true,
+        "weight": 0.4,
+        "description": "Detecção baseada em hash MD5 para duplicatas exatas"
+      },
+      "similarity": {
+        "enabled": true,
+        "weight": 0.6,
+        "description": "Detecção baseada em similaridade de texto"
+      },
+      "ast": {
+        "enabled": false,
+        "weight": 0.8,
+        "description": "Detecção baseada em Abstract Syntax Tree (experimental)"
+      }
+    },
+    "thresholds": {
+      "exact": 1.0,
+      "high": 0.9,
+      "medium": 0.7,
+      "low": 0.5
+    }
+  },
+  
+  "removal": {
+    "strategy": "intelligent",
+    "backup": {
+      "enabled": true,
+      "directory": "./backups",
+      "keepDays": 30,
+      "compress": true
+    },
+    "selection": {
+      "criteria": [
+        {
+          "name": "location",
+          "weight": 10,
+          "description": "Preferir arquivos em src/ ou app/"
+        },
+        {
+          "name": "fileType",
+          "weight": 5,
+          "description": "Preferir Controllers e Models"
+        },
+        {
+          "name": "context",
+          "weight": 3,
+          "description": "Preferir arquivos com mais contexto"
+        },
+        {
+          "name": "modification",
+          "weight": 2,
+          "description": "Preferir arquivos modificados recentemente"
+        }
+      ]
+    },
+    "safety": {
+      "dryRun": false,
+      "confirmEach": false,
+      "maxRemovalPercentage": 0.3,
+      "preserveTests": true,
+      "preserveConfig": true
+    }
+  },
+  
+  "reporting": {
+    "format": "json",
+    "includeCode": true,
+    "includeMetrics": true,
+    "outputFile": "duplicate-report.json",
+    "verbosity": "detailed",
+    "sections": {
+      "summary": true,
+      "duplicates": true,
+      "statistics": true,
+      "recommendations": true,
+      "fileList": false
+    }
+  },
+  
+  "performance": {
+    "maxFileSize": "10MB",
+    "maxFiles": 10000,
+    "parallelProcessing": false,
+    "memoryLimit": "512MB",
+    "timeout": 300
+  },
+  
+  "hooks": {
+    "preCommit": {
+      "enabled": true,
+      "strict": false,
+      "maxDuplicates": 5
+    },
+    "preMerge": {
+      "enabled": true,
+      "strict": true,
+      "maxDuplicates": 0
+    },
+    "postMerge": {
+      "enabled": false,
+      "autoClean": false
+    }
+  },
+  
+  "projectSpecific": {
+    "laravel": {
+      "ignoreMigrations": true,
+      "ignoreSeeds": true,
+      "ignoreFactories": false,
+      "preserveControllers": true,
+      "preserveModels": true
+    },
+    "react": {
+      "ignoreComponents": false,
+      "preserveHooks": true,
+      "ignoreStorybook": true
+    },
+    "vue": {
+      "ignoreComponents": false,
+      "preserveComposables": true
+    }
+  },
+  
+  "customRules": [
+    {
+      "name": "preserve-api-routes",
+      "pattern": "**/routes/api.php",
+      "action": "preserve",
+      "reason": "Rotas de API são críticas"
+    },
+    {
+      "name": "ignore-blade-layouts",
+      "pattern": "**/layouts/*.blade.php",
+      "action": "ignore",
+      "reason": "Layouts podem ter estruturas similares"
+    }
+  ],
+  
+  "notifications": {
+    "email": {
+      "enabled": false,
+      "recipients": [],
+      "onlyOnIssues": true
+    },
+    "slack": {
+      "enabled": false,
+      "webhook": "",
+      "channel": "#dev"
+    },
+    "console": {
+      "enabled": true,
+      "colors": true,
+      "progress": true
+    }
+  }
+}

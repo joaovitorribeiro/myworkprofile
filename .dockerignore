@@ -1,0 +1,190 @@
+# Git and VCS
+.git
+.gitignore
+.gitattributes
+.github/
+
+# Node/NPM/Yarn
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.yarn-integrity
+package-lock.json
+yarn.lock
+
+# Composer (manter apenas composer.json e composer.lock para produção)
+/vendor
+!composer.json
+!composer.lock
+composer.phar
+
+# Vite/Build tools
+/public/build
+/public/hot
+vite.config.js.timestamp-*
+
+# Laravel caches and storage (excluir tudo do storage em build)
+/storage/*
+!/storage/app/
+!/storage/framework/
+!/storage/logs/
+/storage/app/*
+!/storage/app/.gitkeep
+!/storage/app/public/
+/storage/framework/cache/*
+!/storage/framework/cache/.gitkeep
+/storage/framework/sessions/*
+!/storage/framework/sessions/.gitkeep
+/storage/framework/views/*
+!/storage/framework/views/.gitkeep
+/storage/logs/*
+!/storage/logs/.gitkeep
+/bootstrap/cache/*
+!/bootstrap/cache/.gitkeep
+
+# Arquivos de ambiente (manter apenas template de produção)
+.env
+.env.*
+!.env.production
+
+# Arquivos sensíveis e credenciais
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+*.jks
+*.keystore
+auth.json
+/config/secrets.php
+/storage/oauth-*.key
+
+# Backups e dumps
+*.sql
+*.dump
+*.backup
+*.bak
+/database/backups/
+/storage/backups/
+
+# OS específicos
+.DS_Store
+.DS_Store?
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# IDEs e editores
+.idea/
+.vscode/
+.fleet/
+.zed/
+.sublime-*
+*.swp
+*.swo
+*~
+.phpactor.json
+Homestead.json
+Homestead.yaml
+*.sublime-project
+*.sublime-workspace
+.project
+.buildpath
+.settings/
+
+# Testing e CI/CD
+.phpunit.cache
+phpunit.result.cache
+/coverage
+/tests/coverage/
+.github/
+.gitlab-ci.yml
+.travis.yml
+circle.yml
+.circleci/
+
+# Documentação e desenvolvimento
+README*.md
+CHANGELOG*.md
+CONTRIBUTING*.md
+LICENSE*
+/docs/
+dev.sh
+dev.ps1
+
+# Docker específico (permitir Dockerfile e docker-compose)
+!Dockerfile
+!docker-compose.yml
+Dockerfile*
+docker-compose*.yml
+.dockerignore
+
+# Permitir entrypoints e scripts de inicialização
+!entrypoint.sh
+!docker/entrypoint.sh
+
+# Logs e arquivos temporários
+*.log
+*.cache
+*.tmp
+*.temp
+*.pid
+*.seed
+*.pid.lock
+*.lnk
+ehthumbs_vista.db
+
+# Laravel específico para Docker
+/bootstrap/ssr
+/public/storage
+/.nova
+/storage/telescope
+/storage/horizon
+/storage/debugbar
+
+# Arquivos de configuração local
+/config/local.php
+/config/database.local.php
+
+# Uploads privados
+/public/uploads/private/
+/storage/app/uploads/private/
+
+# Certificados SSL/TLS
+*.csr
+*.der
+*.p7b
+*.p7c
+*.p7r
+*.spc
+
+# Arquivos temporários do PHP
+*.php~
+*.phps
+
+# Arquivos de sessão
+/storage/framework/sessions/sess_*
+
+# Estrutura do projeto (arquivos de desenvolvimento)
+estrutura.txt
+landingpage.txt
+PROJECT_NAME_SUGGESTIONS.md

@@ -61,7 +61,7 @@ O projeto foi desenvolvido com foco em responsividade, garantindo uma experiênc
 
 João Vitor Ribeiro Tim
 - GitHub: [@joaovitorribeiro](https://github.com/joaovitorribeiro)
-- Email: [seu-email@exemplo.com]
+- Email: joaovitor@solutionsites.com.br
 
 ---
 

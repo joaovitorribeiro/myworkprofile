@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== Base ===== */
+@layer base {
+    html,
+    body {
+        @apply bg-gradient-to-br from-darker to-dark text-light font-poppins min-h-screen overflow-x-hidden;
+    }
+
+    /* Oculta a barra de rolagem sem desabilitar o scroll (cross-browser) */
+    * {
+        -ms-overflow-style: none; /* IE e Edge antigo */
+        scrollbar-width: none; /* Firefox */
+    }
+    *::-webkit-scrollbar {
+        width: 0px; /* Chrome, Safari e Edge (Blink/WebKit) */
+        height: 0px;
+        background: transparent;
+    }
+
+    /* Performance optimizations */
+    * {
+        box-sizing: border-box;
+    }
+
+    /* Smooth scrolling for anchor links */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* Optimize images */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Reduce motion for accessibility */
+    @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+        }
+    }
+}
+
+/* ===== Utils ===== */
+@layer utilities {
+    /* Offset para âncoras (compensa a navbar) */
+    .anchor-offset {
+        @apply scroll-mt-[calc(theme(height.navbar)+20px)];
+    }
+
+    /* Cartão "glass" padrão */
+    .card-glass {
+        @apply rounded-2xl border border-white/10 bg-white/5 backdrop-blur;
+    }
+
+    /* Performance utilities */
+    .will-change-transform {
+        will-change: transform;
+    }
+
+    .will-change-opacity {
+        will-change: opacity;
+    }
+
+    /* Loading states */
+    .loading-skeleton {
+        @apply animate-pulse bg-white/10 rounded;
+    }
+
+    /* Focus styles for accessibility */
+    .focus-visible-ring {
+        @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/70 focus-visible:ring-offset-2 focus-visible:ring-offset-dark;
+    }
+}
+
+/* ===== Animations ===== */
+@layer utilities {
+    @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+    }
+
+    @keyframes rotate3d {
+        0% { transform: rotateY(0deg) rotateX(0deg); }
+        100% { transform: rotateY(360deg) rotateX(360deg); }
+    }
+
+    .animate-float {
+        animation: float 3s ease-in-out infinite;
+    }
+
+    .animate-rotate3d {
+        animation: rotate3d 20s linear infinite;
+    }
+}

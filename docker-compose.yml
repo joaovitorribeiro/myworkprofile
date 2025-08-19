@@ -1,0 +1,120 @@
+version: "3.8"
+
+services:
+  app:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: MyWorkProfile
+    restart: unless-stopped
+
+    # O Apache expõe 80 para o Traefik interno do Coolify
+    expose:
+      - "80"
+    
+    # Healthcheck para o Coolify
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost/health.php"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 90s
+
+    # O Dockerfile já define o entrypoint e o CMD
+    # entrypoint/command: deixe em branco no Coolify
+
+    environment:
+      # Aplicação
+      APP_NAME: ${APP_NAME:-MyWorkProfile}
+      APP_ENV: ${APP_ENV:-production}
+      APP_DEBUG: ${APP_DEBUG:-false}
+      APP_KEY: ${APP_KEY}
+      APP_URL: ${APP_URL}
+      APP_LOCALE: ${APP_LOCALE:-pt}
+      APP_FALLBACK_LOCALE: ${APP_FALLBACK_LOCALE:-en}
+      APP_FAKER_LOCALE: ${APP_FAKER_LOCALE:-pt_BR}
+
+      # Segurança / Proxy
+      TRUSTED_PROXIES: ${TRUSTED_PROXIES:-*}
+      FORCE_HTTPS: ${FORCE_HTTPS:-true}
+      BCRYPT_ROUNDS: ${BCRYPT_ROUNDS:-12}
+
+      # Sessão
+      SESSION_DRIVER: ${SESSION_DRIVER:-database}
+      SESSION_CONNECTION: ${SESSION_CONNECTION:-default}
+      SESSION_LIFETIME: ${SESSION_LIFETIME:-120}
+      SESSION_ENCRYPT: ${SESSION_ENCRYPT:-true}
+      SESSION_PATH: ${SESSION_PATH:-/}
+      SESSION_DOMAIN: ${SESSION_DOMAIN}
+      SESSION_SECURE_COOKIE: ${SESSION_SECURE_COOKIE:-true}
+      SESSION_HTTP_ONLY: ${SESSION_HTTP_ONLY:-true}
+      SESSION_SAME_SITE: ${SESSION_SAME_SITE:-lax}
+
+      # Sanctum
+      SANCTUM_STATEFUL_DOMAINS: ${SANCTUM_STATEFUL_DOMAINS}
+
+      # Database
+      DB_CONNECTION: ${DB_CONNECTION:-mysql}
+      DB_HOST: ${DB_HOST}
+      DB_PORT: ${DB_PORT:-3306}
+      DB_DATABASE: ${DB_DATABASE:-default}
+      DB_USERNAME: ${DB_USERNAME:-mysql}
+      DB_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+
+      # Cache/Queue (usando database)
+      CACHE_STORE: database
+      CACHE_PREFIX: MyWorkProfile_cache
+      QUEUE_CONNECTION: database
+
+      # Logs
+      LOG_CHANNEL: ${LOG_CHANNEL:-stack}
+      LOG_STACK: ${LOG_STACK:-daily}
+      LOG_LEVEL: ${LOG_LEVEL:-error}
+      LOG_DEPRECATIONS_CHANNEL: ${LOG_DEPRECATIONS_CHANNEL:-null}
+
+      # Mail
+      MAIL_MAILER: ${MAIL_MAILER:-log}
+      MAIL_FROM_ADDRESS: ${MAIL_FROM_ADDRESS:-noreply@MyWorkProfile.ddns.net}
+      MAIL_FROM_NAME: ${MAIL_FROM_NAME:-MyWorkProfile}
+
+      # Outros
+      BROADCAST_CONNECTION: ${BROADCAST_CONNECTION:-log}
+      FILESYSTEM_DISK: ${FILESYSTEM_DISK:-local}
+
+      # Frontend
+      VITE_APP_NAME: ${VITE_APP_NAME:-MyWorkProfile}
+      VITE_APP_URL: ${VITE_APP_URL}
+
+      # Deploy flags (o entrypoint usa)
+      RUN_MIGRATIONS: ${RUN_MIGRATIONS:-true}
+      CLEAR_CACHE: ${CLEAR_CACHE:-false}
+      RUN_QUEUE_WORKER: ${RUN_QUEUE_WORKER:-false}
+      RUN_SCHEDULER: "false"
+      OPTIMIZE_FOR_PRODUCTION: "true"
+
+    # Configurações de segurança
+    security_opt:
+      - no-new-privileges:true
+    
+    # Limites de recursos para produção
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+        reservations:
+          memory: 512M
+
+    volumes:
+      - app_storage:/var/www/html/storage
+      - app_logs:/var/log/MyWorkProfile
+    
+    # Configurações de rede
+    networks:
+      - default
+
+volumes:
+  app_storage:
+    driver: local
+  app_logs:
+    driver: local

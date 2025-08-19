@@ -1,0 +1,171 @@
+# Logs e arquivos temporários
+*.log
+*.cache
+*.tmp
+*.temp
+*.pid
+*.seed
+*.pid.lock
+
+# Arquivos de sistema
+.DS_Store
+.DS_Store?
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Arquivos sensíveis e credenciais
+.env
+.env.*
+.env.example
+.env.production
+.env.backup
+.env.local
+auth.json
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+*.jks
+*.keystore
+/config/secrets.php
+/storage/oauth-*.key
+/storage/app/private/*
+!/storage/app/private/.gitkeep
+
+# Backups e dumps de banco
+*.sql
+*.dump
+*.backup
+*.bak
+/database/backups/
+/storage/backups/
+
+# IDEs e editores
+/.idea
+/.vscode
+/.fleet
+/.zed
+/.sublime-*
+.phpactor.json
+/phpunit.result.cache
+/.phpunit.cache
+Homestead.json
+Homestead.yaml
+*.sublime-project
+*.sublime-workspace
+.project
+.buildpath
+.settings/
+
+# Laravel específico
+/vendor
+/storage/*.key
+/storage/pail
+/bootstrap/ssr
+/bootstrap/cache/*
+!/bootstrap/cache/.gitkeep
+/public/storage
+/storage/app/*
+!/storage/app/.gitkeep
+!/storage/app/public/
+ /storage/framework/cache/*
+!/storage/framework/cache/.gitkeep
+/storage/framework/sessions/*
+!/storage/framework/sessions/.gitkeep
+/storage/framework/views/*
+!/storage/framework/views/.gitkeep
+/storage/logs/*
+!/storage/logs/.gitkeep
+
+# Node/NPM/Yarn
+/node_modules
+/public/build
+/public/hot
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.yarn-integrity
+
+# Composer
+composer.phar
+# Mantém composer.lock para build reprodutível
+!composer.lock
+!composer.json
+
+# Frontend locks para build consistente
+!package.json
+!package-lock.json
+!yarn.lock
+
+# Testing
+/coverage
+/.phpunit.result.cache
+/tests/coverage/
+
+# Nova (se usar Laravel Nova)
+/.nova
+
+# Telescope (se usar Laravel Telescope)
+/storage/telescope
+
+# Horizon (se usar Laravel Horizon)
+/storage/horizon
+
+# Debugbar (se usar Laravel Debugbar)
+/storage/debugbar
+
+# Arquivos de upload e mídia sensível
+/public/uploads/private/
+/storage/app/uploads/private/
+
+# Certificados SSL/TLS
+*.csr
+*.der
+*.p7b
+*.p7c
+*.p7r
+*.spc
+
+# Arquivos de configuração local
+/config/local.php
+/config/database.local.php
+
+# Cache de rotas e configurações
+/bootstrap/cache/config.php
+/bootstrap/cache/routes.php
+/bootstrap/cache/services.php
+
+# Arquivos temporários do PHP
+*.php~
+*.phps
+
+# Arquivos de sessão
+/storage/framework/sessions/sess_*
+
+# Arquivos específicos do Windows
+*.lnk
+ehthumbs_vista.db
+
+# Arquivos específicos do macOS
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Arquivos específicos do Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*

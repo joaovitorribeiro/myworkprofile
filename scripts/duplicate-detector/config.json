@@ -1,0 +1,34 @@
+{
+  "name": "MyWorkProfile Duplicate Code Detector",
+  "version": "1.0.0",
+  "description": "Ferramenta automatizada para detectar e remover duplicatas de código",
+  "settings": {
+    "minLines": 5,
+    "minTokens": 50,
+    "similarity": 0.85,
+    "ignoreWhitespace": true,
+    "ignoreComments": true,
+    "extensions": [".php", ".js", ".ts", ".tsx", ".jsx"],
+    "excludePaths": [
+      "node_modules",
+      "vendor",
+      "storage",
+      "bootstrap/cache",
+      "public/build",
+      ".git",
+      "tests"
+    ],
+    "excludeFiles": [
+      "*.min.js",
+      "*.min.css",
+      "*.map",
+      "composer.lock",
+      "package-lock.json"
+    ]
+  },
+  "reporting": {
+    "format": "json",
+    "outputFile": "duplicate-report.json",
+    "verbose": true
+  }
+}

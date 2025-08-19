@@ -1,0 +1,196 @@
+# Arquivo de configuração para ignorar arquivos/padrões na detecção de duplicatas
+# Sintaxe similar ao .gitignore
+
+# ============================================================================
+# ARQUIVOS E DIRETÓRIOS PADRÃO PARA IGNORAR
+# ============================================================================
+
+# Dependências e bibliotecas
+node_modules/
+vendor/
+composer.lock
+package-lock.json
+yarn.lock
+
+# Arquivos de build e compilação
+build/
+dist/
+out/
+target/
+*.min.js
+*.min.css
+*.bundle.js
+*.bundle.css
+
+# Arquivos temporários
+*.tmp
+*.temp
+*.cache
+*.log
+*.pid
+*.seed
+*.pid.lock
+
+# Arquivos de configuração do sistema
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Diretórios de cache
+.cache/
+.tmp/
+.temp/
+.vscode/
+.idea/
+
+# ============================================================================
+# ARQUIVOS GERADOS AUTOMATICAMENTE
+# ============================================================================
+
+# Migrações de banco de dados (geralmente auto-geradas)
+**/migrations/*.php
+**/database/migrations/*.php
+
+# Arquivos de tradução compilados
+*.mo
+*.pot
+
+# Documentação gerada
+docs/build/
+docs/_build/
+
+# Arquivos de cobertura de testes
+coverage/
+*.coverage
+.nyc_output/
+
+# ============================================================================
+# PADRÕES DE CÓDIGO ESPECÍFICOS
+# ============================================================================
+
+# Arquivos de configuração (podem ter estruturas similares)
+config/*.php
+config/*.js
+config/*.json
+*.config.js
+*.config.php
+
+# Arquivos de teste (podem ter padrões similares)
+**/tests/**/*.php
+**/test/**/*.js
+**/__tests__/**/*.js
+**/*.test.js
+**/*.test.php
+**/*.spec.js
+**/*.spec.php
+
+# Seeders (podem ter estruturas similares)
+**/seeders/*.php
+**/database/seeders/*.php
+
+# Factories (podem ter padrões similares)
+**/factories/*.php
+**/database/factories/*.php
+
+# ============================================================================
+# ARQUIVOS DE FRAMEWORK ESPECÍFICOS
+# ============================================================================
+
+# Laravel
+bootstrap/cache/
+storage/
+public/storage
+.env*
+artisan
+server.php
+
+# React/Vue
+public/
+src/serviceWorker.js
+src/setupTests.js
+
+# WordPress
+wp-content/uploads/
+wp-config.php
+
+# ============================================================================
+# TIPOS DE ARQUIVO PARA IGNORAR COMPLETAMENTE
+# ============================================================================
+
+# Imagens
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.svg
+*.ico
+*.webp
+
+# Vídeos e áudio
+*.mp4
+*.avi
+*.mov
+*.wmv
+*.mp3
+*.wav
+*.ogg
+
+# Documentos
+*.pdf
+*.doc
+*.docx
+*.xls
+*.xlsx
+*.ppt
+*.pptx
+
+# Arquivos comprimidos
+*.zip
+*.rar
+*.tar
+*.gz
+*.7z
+
+# Fontes
+*.ttf
+*.otf
+*.woff
+*.woff2
+*.eot
+
+# ============================================================================
+# PADRÕES PERSONALIZADOS DO PROJETO
+# ============================================================================
+
+# Adicione aqui padrões específicos do seu projeto
+# Exemplo:
+# custom-generated/
+# legacy-code/
+# third-party/
+
+# ============================================================================
+# COMENTÁRIOS E INSTRUÇÕES
+# ============================================================================
+
+# Para ignorar um arquivo específico:
+# caminho/para/arquivo.php
+
+# Para ignorar todos os arquivos com uma extensão:
+# *.extensao
+
+# Para ignorar um diretório inteiro:
+# nome-do-diretorio/
+
+# Para ignorar arquivos que começam com um padrão:
+# prefixo*
+
+# Para ignorar arquivos que terminam com um padrão:
+# *sufixo
+
+# Para negar uma regra (forçar inclusão), use !:
+# !arquivo-importante.php
+
+# Linhas que começam com # são comentários e são ignoradas
