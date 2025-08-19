@@ -94,6 +94,7 @@ RUN { \
   echo 'ServerTokens Prod'; \
   echo 'ServerSignature Off'; \
   echo 'TraceEnable Off'; \
+  echo 'ServerName localhost'; \
   echo 'Header always set X-Content-Type-Options nosniff'; \
   echo 'Header always set X-Frame-Options DENY'; \
   echo 'Header always set X-XSS-Protection "1; mode=block"'; \
