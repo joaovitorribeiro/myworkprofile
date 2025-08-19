@@ -266,6 +266,16 @@ log "✅ Health check pronto em /health.php"
 mkdir -p /var/log/MyWorkProfile && chown -R www-data:www-data /var/log/MyWorkProfile
 log "✅ Diretórios de log preparados"
 
+# ========== Configuração do Apache ServerName ==========
+log "Configurando Apache ServerName..."
+SERVER_NAME="${SERVER_NAME:-localhost}"
+if [ "$SERVER_NAME" != "localhost" ]; then
+  log "Configurando ServerName para: $SERVER_NAME"
+  echo "ServerName $SERVER_NAME" >> /etc/apache2/apache2.conf
+else
+  log "Usando ServerName padrão: localhost"
+fi
+
 # ========== Verificações finais ==========
 log "Executando verificações finais..."
 php -v >/dev/null 2>&1 || { error "PHP não está funcionando"; exit 1; }
