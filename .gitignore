@@ -18,7 +18,6 @@ $RECYCLE.BIN/
 # Arquivos sensíveis e credenciais
 .env
 .env.*
-.env.example
 .env.production
 .env.backup
 .env.local

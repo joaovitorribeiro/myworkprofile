@@ -20,6 +20,8 @@ Portfólio profissional de João Vitor Ribeiro Tim - Desenvolvedor Full Stack & 
 
 ## 🛠️ Instalação
 
+### Desenvolvimento Local (sem Docker)
+
 1. Clone o repositório:
 ```bash
 git clone git@github.com:joaovitorribeiro/myworkprofile.git
@@ -42,6 +44,24 @@ php artisan key:generate
 ```bash
 npm run dev
 ```
+
+### Produção (Coolify + Docker)
+
+Para deploy em produção, o projeto utiliza Coolify com Docker. As variáveis de ambiente são configuradas diretamente no painel do Coolify:
+
+- **APP_NAME**: MyWorkProfile
+- **APP_ENV**: production
+- **APP_KEY**: (gerada automaticamente)
+- **APP_DEBUG**: false
+- **APP_URL**: (URL do seu domínio)
+- **DB_CONNECTION**: mysql
+- **DB_HOST**: (host do banco fornecido pelo Coolify)
+- **DB_PORT**: 3306
+- **DB_DATABASE**: (nome do banco)
+- **DB_USERNAME**: (usuário do banco)
+- **DB_PASSWORD**: (senha do banco)
+
+O Coolify gerencia automaticamente o build e deploy usando o Dockerfile incluído no projeto.
 
 ## 📱 Responsividade
 

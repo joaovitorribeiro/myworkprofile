@@ -46,7 +46,7 @@ export default function About() {
                         <p>
                             Sou um <strong>desenvolvedor full stack</strong>{' '}
                             apaixonado por tecnologia e inovação. Com mais de{' '}
-                            <strong>10 anos de experiência</strong> no mercado,
+                            <strong>5 anos de experiência</strong> no mercado,
                             tenho ajudado empresas a transformar ideias em
                             soluções digitais poderosas.
                         </p>
