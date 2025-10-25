@@ -32,27 +32,7 @@ export default defineConfig({
         chunkSizeWarningLimit: 1000
     },
     server: {
-        host: '0.0.0.0',
+        host: 'localhost',
         port: 5173,
-        cors: {
-            origin: '*',
-        },
-        hmr: {
-            // Para desenvolvimento local
-            host: '192.168.5.118',
-            // Para Docker
-            port: 5173,
-            clientPort: 5173,
-            protocol: 'ws',
-        },
-        watch: {
-            usePolling: true,
-        },
-        // Anti-cache headers for development
-        headers: {
-            'Cache-Control': 'no-cache, no-store, must-revalidate',
-            'Pragma': 'no-cache',
-            'Expires': '0'
-        }
     },
 });
